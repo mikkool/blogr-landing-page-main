@@ -15,3 +15,11 @@
   --very-dark-gray-blue: hsl(237, 17%, 21%);
   --very-dark-desaturated-blue: hsl(237, 23%, 32%);
 }
+
+/* Global */
+header {
+  background-image: 
+  linear-gradient(25deg, var(--very-light-red), var(--light-red));
+}
+
+/* Style */
