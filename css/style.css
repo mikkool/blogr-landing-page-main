@@ -137,7 +137,18 @@ main, footer, header {
 
 /* Main Section */
 .main-content {
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1070px;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("../images/illustration-editor-desktop.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: top 10% right -29%;
+  width: 100%;
+  margin: 2rem 0 5rem 0;
 }
 
 .title-heading {
@@ -152,19 +163,14 @@ main, footer, header {
   color: var(--headings);
 }
 
+/* Design */
+
 .design {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  min-height: 670px;
-  height: 100%;
-  overflow: hidden;
-  background-image: url("../images/illustration-editor-desktop.svg");
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: top 10% right -42%;
 }
 
 .design-text {
@@ -185,6 +191,8 @@ main, footer, header {
   color: var(--body-copy);
 }
 
+/* Infrastructure */
+
 .infra {
   position: relative;
   width: 100%;
@@ -199,13 +207,12 @@ main, footer, header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  
   overflow: hidden;
   background-image: url("../images/bg-pattern-circles.svg");
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: top 85% left -45%;
-  min-height: 300px;
+  min-height: 400px;
 }
 
 .infra-img {
@@ -217,9 +224,10 @@ main, footer, header {
 
 .img-phone {
   position: absolute;
-  width: 25%;
+  width: contain;
   top: -15%;
-  right: 56.5%;
+  right: 53%;
+  
 }
 
 .infra-content {
@@ -242,3 +250,27 @@ main, footer, header {
   padding-top: 1.5rem;
 }
 
+/* Tools */
+.tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%
+}
+
+.tools-grid {
+  min-height: 1070px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background-image: url("../images/illustration-laptop-mobile.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: left -100% center;
+}
+
+.tools-content {
+  max-width: 520px;
+  width: 100%
+}
