@@ -17,6 +17,7 @@
 
   --font-title: 'Overpass', sans-serif;
   --font-text: 'Ubuntu', sans-serif;
+
 }
 
 /* Global */
@@ -41,64 +42,64 @@ html {
   box-sizing: border-box;
   font-size: 100%;
   color: var(--very-light-gray);
-  font-family: var(--font-text)
+  font-family: var(--font-text);
 }
 
-.header {
-  background-image: 
-  linear-gradient(25deg, var(--very-light-red), var(--light-red));
-  display: grid;
+body {
+  background-color: #fafafa;
+}
+
+main, footer, header {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 500px;
-}
-
-.head::after {
-  content: "";
-  background-image: url("../images/bg-pattern-intro.svg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  min-height: 500px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .container {
-  min-width: 1110px;
-  display: flex;
-  align-self: center;
-  justify-content: center;
+  max-width: 1110px;
+  width: 100%;
 }
 
+.button, button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+  border: 0;
+  background-color: var(--white);
+  margin: 0.5rem;
+}
+
+
 /* Style */
+.header {
+  position: relative;
+  background-image: 
+  linear-gradient(25deg, var(--very-light-red), var(--light-red));
+  padding: 4rem 0 7rem 0;
+  border-radius: 0 0 0 4rem;
+  color: var(--white);
+}
+
+.navigation {
+  width: 100%;
+}
+
 .nav-grid {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
-  justify-content:start;
-  width: 100%;
-}
-
-.nav {
-  display: flex;
-  justify-content:s tart;
-  align-items: center;
-  flex-direction: row;
+  justify-content:center;
 }
 
 .nav-item {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: start;
 }
 
 .dropdown {
   cursor: pointer;
   color: var(--white);
+  padding-right: 1rem;
 }
 
 .dropdown-item {
@@ -106,3 +107,138 @@ html {
   flex-direction: column;
   display: none;
 }
+
+.nav-form {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content h1 {
+  margin-top: 5rem;
+}
+
+.header-content p {
+  margin: 2rem 0;
+}
+
+.div-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Section */
+.main-content {
+  
+}
+
+.title-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 500;
+  width: 100%;
+  font-family: var(--font-title);
+  font-weight: 800;
+  color: var(--headings);
+}
+
+.design {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 670px;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("../images/illustration-editor-desktop.svg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: top 10% right -42%;
+}
+
+.design-text {
+  max-width: 520px;
+}
+
+.para-header {
+  font-size: 1.2rem;
+  padding: 4rem 0 2rem 0;
+  font-family: var(--font-title);
+  font-weight: 800;
+  color: var(--headings);
+}
+
+.para-header + p, .infra-content p {
+  line-height: 1.5rem;
+  font-family: var(--font-title);
+  color: var(--body-copy);
+}
+
+.infra {
+  position: relative;
+  width: 100%;
+  background-image: 
+  linear-gradient(30deg, var(--very-dark-gray-blue), var(--very-dark-desaturated-blue));
+  border-radius: 0 4rem 0 4rem;
+}
+
+.infrastructure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  
+  overflow: hidden;
+  background-image: url("../images/bg-pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: top 85% left -45%;
+  min-height: 300px;
+}
+
+.infra-img {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.img-phone {
+  position: absolute;
+  width: 25%;
+  top: -15%;
+  right: 56.5%;
+}
+
+.infra-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: end;
+  max-width: 520px;
+  width: 100%;;
+}
+
+.infra-content .title-heading {
+  display: flex;
+  justify-content: start;
+  color: var(--white);
+}
+
+.infra-content p {
+  color: var(--white);
+  padding-top: 1.5rem;
+}
+
