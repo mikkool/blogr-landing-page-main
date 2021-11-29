@@ -34,7 +34,7 @@ a {
   text-decoration: none;
 }
 
-a:link {
+a:link, a:visited {
   color: var(--white);
 }
 
@@ -61,11 +61,14 @@ main, footer, header {
 }
 
 .button, button {
-  padding: 0.4rem 0.8rem;
-  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
   border: 0;
   background-color: var(--white);
   margin: 0.5rem;
+  font-family: var(--font-text);
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 
@@ -84,34 +87,84 @@ main, footer, header {
 }
 
 .nav-grid {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 3fr;
   align-items: center;
   justify-content:center;
 }
 
+.nav {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3fr 1fr;
+  border: 1px solid red;
+  height: 100%;
+}
+
 .nav-item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: start;
 }
 
 .dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
   cursor: pointer;
   color: var(--white);
-  padding-right: 1rem;
+  margin-right: 2.5rem;
+  height: 50px;
+  border-bottom: 0px solid var(--cta-text);
+}
+
+.dropdown:hover {
+  text-decoration: underline;
+}
+
+.dropdown:hover > .dropdown-item{
+  position: absolute;
+  display: block;
+  transition: all ease-out 0.3s;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.308);
+}
+
+.dropdown:hover > .dropdown-item a {
+  color: var(--footer-background);
+  margin-bottom: 1rem;
+  transition: all ease-in .1s;
+}
+
+.dropdown::after {
+  content: "";
+  background-image: url("../images/icon-arrow-light.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  display: block;
+  top: 45%;
+  right: -30%;
+  width: 10px;
+  height: 10px;
 }
 
 .dropdown-item {
-  display: flex;
-  flex-direction: column;
   display: none;
+  padding: 1.5rem;
+  width: 200px;
+  margin-top: 1rem;
+  height: auto;
+  
 }
 
-.nav-form {
-  display: flex;
-  justify-content: end;
-  align-items: center;
+.dropdown-item a:hover {
+  font-weight: 700;
 }
 
 .header-content {
@@ -133,6 +186,16 @@ main, footer, header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.nav-form .btn-signup {
+  color: var(--light-red)
+}
+
+.btn-signup:hover, .btn-start:hover, .btn-more:hover {
+  background-color: rgba(255, 255, 255, 0.219);
+  color: var(--white);
+  transition: all ease-in 0.3s;
 }
 
 /* Main Section */
@@ -252,25 +315,111 @@ main, footer, header {
 
 /* Tools */
 .tools {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%
-}
-
-.tools-grid {
   min-height: 1070px;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
+  width: 100%;
   background-image: url("../images/illustration-laptop-mobile.svg");
-  background-size: 80%;
+  background-size: 70%;
   background-repeat: no-repeat;
-  background-position: left -100% center;
+  background-position: left -60% center;
+}
+
+.tools-grid {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  
 }
 
 .tools-content {
   max-width: 520px;
   width: 100%
+}
+
+/* Footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--footer-background);
+  min-height: 400px;
+  border-radius: 0 4rem 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.link-head ~ a {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--footer-background);
+}
+
+.link-head ~ a:hover {
+  border-bottom: 1px solid var(--footer-text);
+}
+
+.product, .company, .connect {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.link-head {
+  font-weight: 700;
+  padding-bottom: 2rem;
+}
+
+/* Hamburger Menu */
+.menu {
+  position: relative;
+}
+
+.menu {
+  display: none;
+}
+
+.hamburger {
+  width: 25px;
+  line-height: 3px;
+  display: block;
+  background-color: green;
+  position: relative;
+  left: 0;
+  height: 4px;
+  margin-bottom: 3px;
+  border-radius: 3px;
+  top: 0;
+}
+
+@media only screen and (max-width: 1110px) {
+  .container {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .nav-grid, .nav, .nav-item, .dropdown, .nav-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav {
+    text-align: center;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
