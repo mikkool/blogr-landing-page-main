@@ -43,6 +43,8 @@ html {
   font-size: 100%;
   color: var(--very-light-gray);
   font-family: var(--font-text);
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -98,7 +100,6 @@ main, footer, header {
   display: grid;
   align-items: center;
   grid-template-columns: 3fr 1fr;
-  border: 1px solid red;
   height: 100%;
 }
 
@@ -133,6 +134,7 @@ main, footer, header {
   flex-direction: column;
   border-radius: 1rem;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.308);
+  top: 70%;
 }
 
 .dropdown:hover > .dropdown-item a {
@@ -186,6 +188,12 @@ main, footer, header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.nav-form {
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .nav-form .btn-signup {
@@ -399,17 +407,33 @@ footer {
 @media only screen and (max-width: 1110px) {
   .container {
     width: 100%;
-    padding: 0 2rem;
+    padding: 2rem;
+    text-align: center;
   }
 
   .nav-grid, .nav, .nav-item, .dropdown, .nav-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  
     padding: 0;
     margin: 0;
+    width: 100%;
+  }
+
+  .header-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .div-buttons {
+    font-size: 1rem;
+  }
+
+  .btn-start, .btn-more {
+    padding: 0.6rem 0.7rem;
+    margin: 0 0.3rem;
+    color: var(--white);
+    background-color: transparent;
+    border: 1px solid var(--white);
   }
 
   .nav {
@@ -421,5 +445,99 @@ footer {
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  .main-content {
+    align-items: flex-start;
+    background-image: url("../images/illustration-editor-mobile.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 17%;
+  }
+
+  .title-heading {
+    margin-bottom: 15rem;
+    flex: none;
+  }
+
+  .infra {
+    margin-top: 5rem;
+  }
+
+  .infrastructure {
+    background-size: 100%;
+    background-position-y: -60%;
+  }
+
+  .infra-content {
+    margin-top: 10rem;
+  }
+
+  .infra-content .title-heading {
+    margin-bottom: 0;
+  }
+
+  .img-phone {
+    top: -35%;
+    right: 0;
+    width: 100%;
+  }
+
+  .tools {
+    background-image: url("../images/illustration-laptop-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 5%;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+  }
+
+  .footer-grid .logo {
+    margin-bottom: 2rem;
+  }
+
+  .product, .company, .connect {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-grid {
+    position: relative;
+  }
+
+  .nav {
+    position: absolute;
+    height: auto;
+    top: 100%;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.308);
+    height: auto;
+  }
+
+  .dropdown {
+    color: var(--very-dark-desaturated-blue);
+    height: auto;
+  }
+
+  .dropdown:hover > .dropdown-item {
+    display: initial;
+  }
+
+  .dropdown-item {
+    display: block;
+    position:initial;
+    background-color: var(--footer-text);
+    display: flex;
+    flex-direction: column;
+    height: auto;
   }
 }
