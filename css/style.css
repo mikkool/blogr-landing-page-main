@@ -528,10 +528,6 @@ footer {
     height: auto;
   }
 
-  .dropdown:hover > .dropdown-item {
-    display: initial;
-  }
-
   .dropdown-item {
     display: block;
     position:initial;
@@ -540,4 +536,23 @@ footer {
     flex-direction: column;
     height: auto;
   }
+
+  .menu .hamburger:nth-child(0) {
+    transform: rotate(45deg);
+  }
+
+  .menu .hamburger:nth-child(1) {
+    display: none;
+  }
+
+  .menu .hamburger:nth-child(2) {
+    transform: rotate(-45deg);
+  }
 }
+
+@media (hover: hover){
+  .dropdown:hover {
+
+  }
+}
+
