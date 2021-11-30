@@ -93,7 +93,7 @@ main, footer, header {
   display: grid;
   grid-template-columns: 1fr 3fr;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
 }
 
 .nav {
@@ -385,10 +385,11 @@ footer {
 /* Hamburger Menu */
 .menu {
   position: relative;
-}
-
-.menu {
   display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger {
@@ -396,12 +397,11 @@ footer {
   line-height: 3px;
   display: block;
   background-color: green;
-  position: relative;
-  left: 0;
+  
   height: 4px;
   margin-bottom: 3px;
   border-radius: 3px;
-  top: 0;
+  
 }
 
 @media only screen and (max-width: 1110px) {
@@ -411,13 +411,25 @@ footer {
     text-align: center;
   }
 
-  .nav-grid, .nav, .nav-item, .dropdown, .nav-form {
+  .nav-grid, .nav, .nav-item, .dropdown, .nav-form, .design-grid, .infra-img, .tools-content{
     display: flex;
     flex-direction: column;
-  
+    align-items: center;
     padding: 0;
     margin: 0;
     width: 100%;
+  }
+
+  .nav-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+  }
+
+  .design-grid {
+    margin-top: 50%;
   }
 
   .header-content h1 {
@@ -453,25 +465,26 @@ footer {
     background-image: url("../images/illustration-editor-mobile.svg");
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position-y: 17%;
+    background-position-y: 20%;
   }
 
   .title-heading {
-    margin-bottom: 15rem;
+    margin-bottom: 40%;
     flex: none;
   }
 
   .infra {
-    margin-top: 5rem;
+    margin-top: 40%;
   }
 
   .infrastructure {
     background-size: 100%;
-    background-position-y: -60%;
+    background-position-y: 100%;
   }
 
   .infra-content {
-    margin-top: 10rem;
+    margin-top: 70%;
+    margin-bottom: 10%;
   }
 
   .infra-content .title-heading {
@@ -489,6 +502,17 @@ footer {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position-y: 5%;
+  }
+
+  .tools-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tools-content {
+    margin-top: 70%;
+    margin-bottom: 10%;
   }
 
   .footer-grid {
