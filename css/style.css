@@ -475,6 +475,19 @@ footer {
 
   .dropdown {transition: ease-in 0.5s;}
 
+  .dropdown::after {
+    content: "";
+    background-image: url("../images/icon-arrow-dark.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    display: block;
+    top: 35%;
+    right: -22%;
+    width: 10px;
+    height: 10px;
+  }
+
   .dropdown:hover > .dropdown-item{
     position: inherit;
     display: block;
@@ -485,6 +498,10 @@ footer {
     flex-direction: column;
     transition: ease-in 0.5s;
     max-width: 100%;
+  }
+
+  .dropdown, .dropdown:hover > .dropdown-item a{
+    font-size: 1.5rem;
   }
 
   .menu {
