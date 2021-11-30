@@ -38,7 +38,7 @@ a:link, a:visited {
   color: var(--white);
 }
 
-html {
+html, body{
   box-sizing: border-box;
   font-size: 100%;
   color: var(--very-light-gray);
@@ -384,12 +384,9 @@ footer {
 
 /* Hamburger Menu */
 .menu {
-  position: relative;
+  position: fixed;
   display: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
 }
 
 .hamburger {
@@ -406,12 +403,16 @@ footer {
 
 @media only screen and (max-width: 1110px) {
   .container {
-    width: 100%;
+    max-width: 100%;
     padding: 2rem;
     text-align: center;
   }
 
-  .nav-grid, .nav, .nav-item, .dropdown, .nav-form, .design-grid, .infra-img, .tools-content{
+  .header .container {
+    width: 100%;
+  }
+
+  .nav, .dropdown, .nav-form, .design-grid, .infra-img, .tools-content{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -424,8 +425,8 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    background-color: red;
+    justify-content: start;
+    max-width: 100%;
   }
 
   .design-grid {
@@ -451,6 +452,39 @@ footer {
   .nav {
     text-align: center;
     display: none;
+    transition: ease-in 0.5s;
+    padding: 2rem;
+  }
+
+  .nav.clicked {
+    display: block;
+    transition: ease-in 0.5s;
+    max-width: 100%;
+  }
+
+  .nav-item {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .dropdown {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .dropdown {transition: ease-in 0.5s;}
+
+  .dropdown:hover > .dropdown-item{
+    position: inherit;
+    display: block;
+    box-shadow: none;
+    background-color: rgb(235, 233, 233);
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    transition: ease-in 0.5s;
+    max-width: 100%;
   }
 
   .menu {
@@ -553,29 +587,23 @@ footer {
     height: auto;
   }
 
-  .dropdown-item {
-    display: block;
-    position:initial;
-    background-color: var(--footer-text);
-    display: flex;
-    flex-direction: column;
-    height: auto;
-  }
-
   .menu {
     cursor: pointer;
   }
 
   .menu.clicked .hamburger:nth-child(1) {
-    transform: rotate(45deg) translateY(5px);
+    transform: rotate(45deg) translateX(5px);
+    transition: ease-in 0.5s;
   }
 
   .menu.clicked .hamburger:nth-child(2) {
-    display: none;
+    opacity: 0;
+    transition: ease-in 0.5s;
   }
 
   .menu.clicked .hamburger:nth-child(3) {
-    transform: rotate(-45deg) translateY(-5px);
+    transform: rotate(-45deg) translate(10px, -5px);
+    transition: ease-in 0.5s;
   }
 }
 
