@@ -493,7 +493,7 @@ footer {
     margin-bottom: 2rem;
   }
 
-  .dropdown {max-width: 100%; ease-in 0.5s;}
+  .dropdown {max-width: 100%; transition: ease-in 0.5s;}
 
   .dropdown::after {
     content: "";
