@@ -429,6 +429,25 @@ footer {
     max-width: 100%;
   }
 
+  .nav-form {
+    border-top: 1px solid rgb(235, 233, 233);
+    padding-top: 2rem
+  }
+
+  .nav-form a{
+    color: var(--very-dark-desaturated-blue);
+    font-size: 1.5rem;
+  }
+
+  .nav-form .btn-signup{
+    color: white;
+  }
+
+  .btn-signup {
+    background-image: 
+    linear-gradient(25deg, var(--very-light-red), var(--light-red));
+  }
+
   .design-grid {
     margin-top: 50%;
   }
@@ -469,18 +488,19 @@ footer {
     
   }
   .dropdown {
+    position: relative;
     width: 100%;
     margin-bottom: 2rem;
   }
 
-  .dropdown {transition: ease-in 0.5s;}
+  .dropdown {max-width: 100%; ease-in 0.5s;}
 
   .dropdown::after {
     content: "";
     background-image: url("../images/icon-arrow-dark.svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    position: absolute;
+    position: fixed;
     display: block;
     top: 35%;
     right: -22%;
