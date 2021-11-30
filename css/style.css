@@ -438,6 +438,7 @@ footer {
 
   .nav {
     text-align: center;
+    display: none;
   }
 
   .menu {
@@ -537,22 +538,22 @@ footer {
     height: auto;
   }
 
-  .menu .hamburger:nth-child(0) {
-    transform: rotate(45deg);
+  .menu {
+    cursor: pointer;
   }
 
-  .menu .hamburger:nth-child(1) {
+  .menu.clicked .hamburger:nth-child(1) {
+    transform: rotate(45deg) translateY(5px);
+  }
+
+  .menu.clicked .hamburger:nth-child(2) {
     display: none;
   }
 
-  .menu .hamburger:nth-child(2) {
-    transform: rotate(-45deg);
+  .menu.clicked .hamburger:nth-child(3) {
+    transform: rotate(-45deg) translateY(-5px);
   }
 }
 
-@media (hover: hover){
-  .dropdown:hover {
 
-  }
-}
 
